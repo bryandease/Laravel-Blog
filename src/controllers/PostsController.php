@@ -1,6 +1,9 @@
 <?php namespace Fbf\LaravelBlog;
 
-class PostsController extends \BaseController {
+use Popvox\Modules\Blog\Post;
+use Popvox\Http\Controllers\BaseController;
+
+class PostsController extends BaseController {
 
 	/**
 	 * @var \Fbf\LaravelBlog\Post
@@ -27,12 +30,12 @@ class PostsController extends \BaseController {
 			->paginate(\Config::get('laravel-blog::views.index_page.results_per_page'));
 
 		// Get the archives data if the config says to show the archives on the index page
-		if (\Config::get('laravel-blog::views.index_page.show_archives'))
+		if (\Config::get('laravel-blog.views.index_page.show_archives'))
 		{
 			$archives = $this->post->archives();
 		}
 
-		return \View::make(\Config::get('laravel-blog::views.index_page.view'), compact('posts', 'archives'));
+		return \View::make(\Config::get('laravel-blog.views.index_page.view'), compact('posts', 'archives'));
 	}
 
 	/**
@@ -41,7 +44,7 @@ class PostsController extends \BaseController {
 	 * @return mixed
 	 */
 	public function indexByYearMonth($selectedYear, $selectedMonth)
-	{
+    {
 		// Get the selected posts
 		$posts = $this->post->live()
 			->byYearMonth($selectedYear, $selectedMonth)
@@ -105,7 +108,7 @@ class PostsController extends \BaseController {
 			$archives = $this->post->archives();
 		}
 
-		return \View::make(\Config::get('laravel-blog::views.view_page.view'), compact('post', 'newer', 'older', 'archives'));
+		return \View::make(\Config::get('laravel-blog.views.view_page.view'), compact('post', 'newer', 'older', 'archives'));
 
 	}
 

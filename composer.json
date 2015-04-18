@@ -1,31 +1,31 @@
 {
-    "name": "fbf/laravel-blog",
-    "description": "A Laravel 5 update to this blog backage",
-    "keywords": ["laravel","blog"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Neil Crookes",
-            "email": "neil.crookes@fivebyfiveuk.com"
-        }
+  "name": "fbf/laravel-blog",
+  "description": "A Laravel 5 update to this blog backage",
+  "keywords": ["laravel","blog"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Neil Crookes",
+      "email": "neil.crookes@fivebyfiveuk.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "5.*",
+    "thujohn/rss": "dev-master",
+    "cviebrock/eloquent-sluggable": ">=3.0.0-alpha",
+    "fzaninotto/faker": "1.4.*"
+  },
+  "autoload": {
+    "classmap": [
+      "src/controllers",
+      "src/migrations",
+      "src/models",
+      "src/seeds"
     ],
-    "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "5.*",
-        "thujohn/rss": "dev-master",
-        "cviebrock/eloquent-sluggable": ">=3.0.0-alpha",
-        "fzaninotto/faker": "1.4.*"
-    },
-    "autoload": {
-        "classmap": [
-            "src/controllers",
-            "src/migrations",
-            "src/models",
-            "src/seeds"
-        ],
-        "psr-0": {
-            "Fbf\\LaravelBlog": "src/"
-        }
-    },
-    "minimum-stability": "dev"
+    "psr-0": {
+      "Fbf\\LaravelBlog": "src/"
+    }
+  },
+  "minimum-stability": "dev"
 }
